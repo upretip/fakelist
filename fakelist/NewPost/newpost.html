@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NewPost</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>Please fill the following form to create your post</h1>
+    <form action="./newpost.php" method="post" enctype = "multipart/form-data">
+        <label for="Sub-CategorySelect">Sub-Category:</label>
+        <select name = "subcategory" id="subcategory" required>
+            <option value="book">Book</option>
+            <option value="electronics">electronics</option>
+            <option value="household">household</option>
+            <option value="financial">financial</option>
+            <option value="lessons" >lessons</option>
+            <option value="fulltime">fulltime</option>
+            <option value="parttime">parttime</option>
+            <option value="volunteering">volunteering</option>
+            <option value="computer">computer</option>
+        </select><br><br>
+        <label for="locationSelect">Location:</label>
+        <select name = "location" id="location"  required>
+            <option value="delhi" >delhi</option>
+            <option value="cuptertino" selected>cupertino</option>
+            <option value="melnopark">melnopark</option>
+            <option value="stanford">stanford</option>
+            <option value="mumbai">mumbai</option>
+            <option value="bangalore">bangalore</option>
+            <option value="london">london</option>
+            <option value="paris">paris</option>
+            <option value="zurich">zurich</option>
+        </select>
+        <br><br>
+        Title: <input type="longtext" name ="title"required><br><br>
+        Price (USD):<input type="number" name = "price" decimalpalces="2"><br>
+        <br>
+        <label for="description">Description: </label>
+        <textarea id="desc" name="description" row="10" cols="50"></textarea><br><br>
+        Email <input type="email" name="email" required><br><br>
+        Confirm Email <input type="email" name = "confemail"><br><br>
+
+        <input type="checkbox" name ="terms" required>I agree with <a href="../terms.html"> terms and conditions</a></input><br>
+        <br>
+        <br>
+        Optional fields: <br><br>
+        Image 1 (max 5 MB): <input type="file" name = "image1" accept = "image/*"><br><br>
+        Image 2 (max 5 MB): <input type="file" name = "image2" accept = "image/*"><br><br>
+        Image 3 (max 5 MB): <input type="file" name = "image3" accept = "image/*"><br><br>
+        Image 4 (max 5 MB): <input type="file" name = "image4" accept = "image/*"><br><br>
+
+    
+        <input type="submit" value="Submit">
+        <input type = "reset" value = "Reset">
+
+        <br><br>
+
+        Go to <a href="../Auth/index.php">Home</a>
+    </form>
+</body>
+
+</html>

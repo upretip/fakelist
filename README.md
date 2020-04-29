@@ -1,2 +1,2 @@
 # fakelist
-fakelist is a fake craiglist webapp built for learning purpose. It uses LAMP stack 
+fakelist is a fake craigslist webapp built for learning purpose. It uses LAMP stack 
