@@ -28,6 +28,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `Category`
 --
 
+CREATE DATABASE FAKERDB;
+USE FAKERDB;
+
 CREATE TABLE `Category` (
   `Category_ID` mediumint(9) NOT NULL,
   `CategoryName` varchar(100) DEFAULT NULL

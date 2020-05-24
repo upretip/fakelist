@@ -1,2 +1,12 @@
 # DOckerfile configuration
 
+# Download random LAMP dockerfile from internet
+FROM mattrayner/lamp:latest-1804
+# FROM ubuntu:20.04
+# RUN apt-get update
+# RUN apt-get -y apache2, 
+WORKDIR /app
+COPY fakelist /app/
+COPY queries.sql /app/
+# RUN service apache2 restart
+
