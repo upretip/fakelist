@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lamp_final_project`
+-- Database: `fakerdb`
 --
 
 -- --------------------------------------------------------
@@ -28,8 +28,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `Category`
 --
 
-CREATE DATABASE FAKERDB;
-USE FAKERDB;
+CREATE DATABASE IF NOT EXISTS fakerdb;
+USE fakerdb;
+
+
+CREATE USER if not exists 'lamp'@'localhost' identified by '1';
+GRANT ALL PRIVILEGES ON * . * TO 'lamp'@'localhost';
+FLUSH PRIVILEGES;
 
 CREATE TABLE `Category` (
   `Category_ID` mediumint(9) NOT NULL,

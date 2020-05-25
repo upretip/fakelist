@@ -8,5 +8,6 @@ FROM mattrayner/lamp:latest-1804
 WORKDIR /app
 COPY fakelist /app/
 COPY queries.sql /app/
+# RUN mysql -u root < queries.sql
 # RUN service apache2 restart
-
+EXPOSE 80

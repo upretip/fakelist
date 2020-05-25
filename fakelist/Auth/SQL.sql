@@ -1,4 +1,21 @@
---create login table 
+-- create database 
+
+CREATE database if not exists fakerdb;
+
+-- use fakerdb
+
+USE fakerdb;
+
+
+-- create new user and grant all access 
+
+CREATE USER if not exists 'lamp'@'localhost' identified by '1';
+GRANT ALL PRIVILEGES ON * . * TO 'lamp'@'localhost';
+FLUSH PRIVILEGES;
+
+
+
+-- create login table 
 CREATE TABLE IF NOT EXISTS  login (
 	ID mediumint(9) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 	username varchar(100),
@@ -7,20 +24,20 @@ CREATE TABLE IF NOT EXISTS  login (
 );
 
 
---create category table
+-- create category table
 
 CREATE TABLE IF NOT EXISTS Category (
     Category_ID mediumint(9) AUTO_INCREMENT Primary KEY NOT NULL,
     CategoryName varchar(100)
 );
 
---create Region Table
+-- create Region Table
 Create Table IF NOT EXISTS Region (
     Region_ID mediumint(9) AUTO_INCREMENT Primary KEY NOT NULL,
     RegionName varchar(100)
 );
 
---create subcategory table
+-- create subcategory table
 CREATE TABLE IF NOT EXISTS SubCategory (
     SubCategory_ID mediumint(9) AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Category_ID mediumint(9),
@@ -28,14 +45,14 @@ CREATE TABLE IF NOT EXISTS SubCategory (
     FOREIGN KEY (Category_ID) REFERENCES Category(Category_ID),
 );
 
---create Location table
+-- create Location table
 CREATE TABLE IF NOT EXISTS Location (
     Location_ID mediumint(9) AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Region_ID mediumint(9),
     LocationName varchar(100)
 );
 
---create Posts table
+-- create Posts table
 CREATE TABLE IF NOT EXISTS Posts (
     Post_ID mediumint(9) AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Title varchar(100),
@@ -54,7 +71,7 @@ CREATE TABLE IF NOT EXISTS Posts (
     FOREIGN KEY (Location_ID) REFERENCES Location(Location_ID)
 );
 
---add region name to the database
+-- add region name to the database
 
 INSERT INTO Region
 (RegionName) VALUES
@@ -62,7 +79,7 @@ INSERT INTO Region
 ('Europe'),
 ('India');
 
---add category
+-- add category
 
 INSERT INTO Category
 (CategoryName) VALUES
